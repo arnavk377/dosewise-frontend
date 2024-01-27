@@ -1,7 +1,12 @@
 import Navbar from './navbar.jsx';
 
 function PrescriptionTable() {
-    
+    return (
+        <>
+            <Navbar />
+            <div>Hi</div>
+        </>
+    )
 }
 
 function getPrescriptionInfo() {
@@ -29,3 +34,5 @@ function getPrescriptionInfo() {
         alert(err.message);
       });
   }
+
+export default PrescriptionTable
