@@ -42,7 +42,7 @@ export default function App() {
       </form>
       </div>
       <div className="d-flex justify-content-center align-items-center mt-5">
-      <p id="drugInfo">DRUG INFO</p>
+      <p id="drugInfo" className="text-white">DRUG INFO</p>
       </div>
     </>
   )
