@@ -11,6 +11,10 @@ body {
     background-image: linear-gradient(to bottom, #13031a, #320b38);
 }
 
+.questrial {
+    font-family: 'Questrial', sans-serif;
+}
+
 .main-title {
     font-family: 'Questrial', sans-serif;
     font-size: 64px;

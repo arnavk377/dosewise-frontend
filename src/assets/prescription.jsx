@@ -9,8 +9,9 @@ function Prescription() {
     return (
         <>
             <Navbar />
-            <h1>Prescription information</h1>
-            <form className="p-5">
+            <form className="p-5 container bg-white rounded">
+                
+                <h1>Prescription information</h1>
                 <label htmlFor="drugname"></label>
                 <input className="form-control locked-form" type="text" id="drugname" name="drugname" value={paramValue} disabled/>
                 <div className="row my-2">
@@ -25,10 +26,10 @@ function Prescription() {
                 </div>
                 <div className="row mt-4">
                     <div className="col">
-                        <h3 className="text-white text-center">Taken every</h3>
+                        <h4 className="text-dark text-center questrial">Taken every</h4>
                     </div>
                     <div className="col">
-                        <input className="form-control" type="number" id="dosagecount" name="dosagecount" />
+                        <input className="form-control" type="number" id="dosagecount" name="dosagecount" placeholder="2" />
                     </div>
                     <div className="col">
                     <select className="form-select" id="dosagefreq" name="dosagefreq">
