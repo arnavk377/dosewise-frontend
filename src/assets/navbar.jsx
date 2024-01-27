@@ -11,12 +11,12 @@ function navbar() {
     <Navbar expand="lg" className="bg-body-tertiary navbar-dark">
       <Container className="px-1 mx-3">
         <img src={dosewiseLogo} alt="DoseWise Logo" className="logo" /> 
-        <Navbar.Brand to="/" className="text-white px-2 popUp">DoseWise</Navbar.Brand>
+        <Navbar.Brand to="/" className="text-white px-2 popUp questrial">DoseWise</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav navbar-dark">
           <Nav className="me-auto navbar-light">
-            <Nav.Link to="/" className="text-white px-1 popUp">Sign Up</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown" className="px-1">
+            <Nav.Link to="/" className="text-white px-1 popUp questrial">Sign Up</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown" className="px-1 questrial">
               <NavDropdown.Item >Action</NavDropdown.Item>
               <NavDropdown.Item >
                 Another action
