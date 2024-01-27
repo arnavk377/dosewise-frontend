@@ -1,13 +1,15 @@
+import { useState } from 'react'
 import Navbar from './navbar.jsx';
 
 function Prescription() {
+    const [data, setData] = useState(null)
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const drugName = urlParams.get('name');
     const drugManufacturer = urlParams.get('manufacturer');
     console.log(drugName + " " + drugManufacturer);
 
-    handleSubmit = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
 
         // get all form data
@@ -42,13 +44,15 @@ function Prescription() {
             .catch(error => {
                 console.log(error);
             });
+
+        return;
     }
 
 
     return (
         <>
             <Navbar />
-            <form className="p-5 container bg-white rounded">
+            <form className="p-5 container bg-white rounded" onSubmit={handleSubmit}>
                 
                 <h1 className="text-center">Prescription Information</h1>
                 <label htmlFor="drugname">Drug Name</label>
