@@ -9,6 +9,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Prescription from './assets/prescription.jsx'
+import PrescriptionTable from './assets/prescriptiontable.jsx'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/prescription",
     element: <Prescription />,
+  }, 
+  {
+    path: "/prescriptiontable",
+    element: <PrescriptionTable />,
   }
 ])
 
