@@ -23,8 +23,8 @@ function Prescription() {
 
         // create a JS fetch get request, append all data to the url
         var url = 'http://localhost:8080/api/v1/add';
-        url += '?name=' + data.get('drugname');
-        url += '&manufacturer_name=' + data.get('drugmanufacturer');
+        url += '?name=' + drugName;
+        url += '&manufacturer_name=' + drugManufacturer
         url += '&dosage_start_date=' + data.get('startdate');
         url += '&dosage_end_date=' + data.get('enddate');
         url += '&dosage_frequency=' + data.get('dosagecount');
