@@ -6,7 +6,7 @@ function PrescriptionTable() {
 
 function getPrescriptionInfo(username) {
     // API request to get drug info
-    const url = 'http://localhost:8080/api/v1/lookup?name=' + drugName; //http://localhost:8080/api/v1/lookup?name=
+    const url = 'http://localhost:8080/api/v1/lookup?name=' + drugName; //http://localhost:8080/api/v1/get_medicines_for_user?username=jdoe
     // no-cors mode to allow cross-origin requests
     const options = {
       method: 'GET'
