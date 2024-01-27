@@ -12,11 +12,7 @@ export default function App() {
     // get drug info from API request
     const drugInfo = getDrugInfo(drugName.data);
     // display drug info
-    return (
-      <>
-      <h1>MATCHED DRUG: {drugInfo}</h1>
-      </>
-    )
+    return;
   }
 
   return (
@@ -57,15 +53,36 @@ function getDrugInfo(drugName) {
   };
   // fetch data and return the name of the drug
   fetch(url, options)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response unsuccessful.');
+      }
+      return response;
+    })
     .then(response => response.json())
     .then(data => {
       console.log(data);
 
       // change html element to display drug info
-      document.getElementById("drugInfo").innerHTML = data.results[0].active_ingredients[0].name;
+      const drugResult = data.results[0].active_ingredients[0].name;
+      if (drugResult == undefined) {
+        alert("Drug not found!")
+      }
+      else {
+        document.getElementById("drugInfo").innerHTML = drugResult;
+        var dconf = confirm("Drug found: " + drugResult + ". Click OK if this is accurate. If not, please try searching again.");
+        if (dconf == true) {
+          window.location.href = '/prescription' + '?name=' + drugResult;
+        }
+        else {
+          window.location.href = '/';
+        }
+      }
 
       return;
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      alert(err.message);
+    });
 }
 
