@@ -8,6 +8,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Prescription from './assets/prespcription.jsx'
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,14 @@ const router = createBrowserRouter([
     path: "/login",
     element: <LogIn />,
   },
+  {
+    path: "/login",
+    element: <LogIn />,
+  },
+  {
+    path: "/prescription",
+    element: <Prescription />,
+  }
 ])
 
 
