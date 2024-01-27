@@ -38,6 +38,18 @@ nav {
     color: white;
 }
 
+.collapse.show {
+    background-color: #211725;
+    color: white;
+    border-radius: 0.5em;
+}
+
+.collapsing {
+    background-color: #211725;
+    color: white;
+    border-radius: 0.5em;
+}
+
 .popUp {
     transform: translate(0, 0) scale(1);
     transition: ease-in-out 0.1s;
