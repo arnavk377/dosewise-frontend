@@ -22,7 +22,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <h1>Welcome to DoseWise!</h1>
+      <h1 className="">Welcome to DoseWise!</h1>
       <form className='input-form' onSubmit={handleSubmit}>
         <div>
           <label htmlFor='data'>Drug Name</label>
