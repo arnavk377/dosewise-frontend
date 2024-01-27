@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Navbar from './assets/navbar.jsx'
 
 export default function App() {
   const [data, setData] = useState(null)
@@ -20,6 +21,7 @@ export default function App() {
 
   return (
     <>
+      <Navbar />
       <h1>Welcome to DoseWise!</h1>
       <form className='input-form' onSubmit={handleSubmit}>
         <div>
