@@ -15,6 +15,12 @@ export default function App() {
     return;
   }
 
+  // check if there is a username and hash stored in local storage.
+  // if not, redirect to login page
+  if (localStorage.getItem('username') === null || localStorage.getItem('hash') === null) {
+    window.location.href = '/login';
+  }
+
   return (
     <>
       <Navbar />

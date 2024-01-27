@@ -47,6 +47,8 @@ function Prescription() {
             })
             .then(data => {
                 console.log(data);
+                // redirect to prescription table
+                window.location.href = '/prescriptiontable';
             })
             .catch(error => {
                 console.log(error);
