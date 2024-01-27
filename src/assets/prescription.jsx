@@ -7,12 +7,50 @@ function Prescription() {
     const drugManufacturer = urlParams.get('manufacturer');
     console.log(drugName + " " + drugManufacturer);
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+
+        // get all form data
+        const data = new FormData(event.target);
+        console.log(data);
+
+        // create a JS fetch get request, append all data to the url
+        var url = 'http://localhost:8080/api/v1/add';
+        url += '?name=' + data.get('drugname');
+        url += '&manufacturer_name=' + data.get('drugmanufacturer');
+        url += '&dosage_start_date=' + data.get('startdate');
+        url += '&dosage_end_date=' + data.get('enddate');
+        url += '&dosage_frequency=' + data.get('dosagecount');
+        url += '&dosage_frequency_unit=' + data.get('dosagefreq')
+        url += '&dosage_number=' + data.get('dosage');
+        url += '*time_until_next_dose=' + "0";
+        const options = {
+            method: 'GET'
+        };
+
+        // fetch data and confirm success
+        fetch(url, options)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response unsuccessful.');
+                }
+                return response;
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+
     return (
         <>
             <Navbar />
             <form className="p-5 container bg-white rounded">
                 
-                <h1 className="text-center">Prescription information</h1>
+                <h1 className="text-center">Prescription Information</h1>
                 <label htmlFor="drugname">Drug Name</label>
                 <input className="form-control locked-form" type="text" id="drugname" name="drugname" value={drugName} disabled/>
                 <label htmlFor="drugmanufacturer">Drug Manufacturer</label>
@@ -29,7 +67,7 @@ function Prescription() {
                 </div>
                 <div className="row my-3">
                     <div className="col-2 align-bottom">
-                        <div className="text-dark text-end questrial">Taken every</div>
+                        <h4 className="text-dark text-end questrial">Taken every</h4>
                     </div>
                     <div className="col">
                     <label htmlFor="dosagecount">Count</label>
@@ -46,7 +84,19 @@ function Prescription() {
                 </div>
                 <label htmlFor="dosage">Dosage</label>
                 <input className="form-control" type="text" id="dosage" name="dosage" placeholder="100mg" />
-                <input type="submit" value="Submit" className="btn btn-primary mt-3 bstyle" />
+                {/* <label htmlFor="firstdose">First Dose</label>
+                <div className="row my-2">
+                    <div className="col">
+                        <input className="form-control" type="date" id="firstdose" name="firstdose" />
+                    </div>
+                    <div className="col">
+                        <input className="form-control" type="time" id="firstdose" name="firstdose" />
+                    </div>
+                </div>
+                <label htmlFor="notes">Notes</label>
+                <textarea className="form-control" id="notes" name="notes" rows="3" placeholder="Take with food"></textarea>
+                */}
+                <input type="submit" value="Submit" className="btn btn-primary mt-3 bstyle b100"/>
             </form>
         </>
     )

@@ -30,8 +30,14 @@ body {
 }
 
 .bstyle:hover {
-    transform: scale(1.1);
+    transform: translate(0, -1px);
 }
+
+
+.b100 {
+    width: 100%;
+}
+
 
 .locked-form {
     background-color: #ffffff !important;
