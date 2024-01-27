@@ -1,10 +1,32 @@
 import Navbar from './navbar.jsx';
 
 function PrescriptionTable() {
+    const handleLoad = (event) => {
+        event.preventDefault();
+        // get drug name from API request
+        const table = {data}
+        console.log(table.data);
+        // get drug info from API request
+        // display drug info
+        return;
+      }
     return (
         <>
             <Navbar />
-            <div>Hi</div>
+            <div>
+                <table>
+                    <tr>
+                    <th>Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Dosage Frequency Unit</th>
+                    <th>Dosage Frequency</th>
+                    <th>Dosage Number</th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                </table>
+            </div>
         </>
     )
 }
