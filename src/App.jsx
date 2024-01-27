@@ -65,6 +65,7 @@ function getDrugInfo(drugName) {
 
       // change html element to display drug info
       const drugResult = data.results[0].active_ingredients[0].name;
+      const drugManufacturer = data.results[0].openfda.manufacturer_name[0];
       if (drugResult == undefined) {
         alert("Drug not found!")
       }
@@ -72,7 +73,7 @@ function getDrugInfo(drugName) {
         document.getElementById("drugInfo").innerHTML = drugResult;
         var dconf = confirm("Drug found: " + drugResult + ". Click OK if this is accurate. If not, please try searching again.");
         if (dconf == true) {
-          window.location.href = '/prescription' + '?name=' + drugResult;
+          window.location.href = '/prescription' + '?name=' + drugResult + '&manufacturer=' + drugManufacturer;
         }
         else {
           window.location.href = '/';
