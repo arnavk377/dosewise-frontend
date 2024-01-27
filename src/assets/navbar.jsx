@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import "./navbar.css"
 import dosewiseLogo from './dosewiselogo.png';
 import Container from 'react-bootstrap/Container';
@@ -11,11 +12,11 @@ function navbar() {
     <Navbar expand="lg" className="bg-body-tertiary navbar-dark">
       <Container className="px-1 mx-3">
         <img src={dosewiseLogo} alt="DoseWise Logo" className="logo" /> 
-        <Navbar.Brand to="/" className="text-white px-2 popUp questrial">DoseWise</Navbar.Brand>
+        <Navbar.Brand to="/" className="text-white px-2 popUp questrial"><Link to="/">Dosewise</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav navbar-dark">
           <Nav className="me-auto navbar-light">
-            <Nav.Link to="/" className="text-white px-1 popUp questrial">Log In / Sign Up</Nav.Link>
+            <Nav.Link className="text-white px-1 popUp questrial"><Link to="/signup">Sign Up</Link></Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown" className="px-1 questrial">
               <NavDropdown.Item >Action</NavDropdown.Item>
               <NavDropdown.Item >
