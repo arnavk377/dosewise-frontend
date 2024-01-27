@@ -8,7 +8,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Prescription from './assets/prespcription.jsx'
+import Prescription from './assets/prescription.jsx'
 
 const router = createBrowserRouter([
   {

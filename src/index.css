@@ -28,3 +28,8 @@ body {
 .bstyle:hover {
     transform: scale(1.1);
 }
+
+.locked-form {
+    background-color: #ffffff !important;
+    cursor: not-allowed
+}
