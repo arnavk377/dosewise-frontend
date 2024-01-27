@@ -11,7 +11,7 @@ function Prescription() {
             <Navbar />
             <form className="p-5 container bg-white rounded">
                 
-                <h1>Prescription information</h1>
+                <h1 className="text-center">Prescription information</h1>
                 <label htmlFor="drugname"></label>
                 <input className="form-control locked-form" type="text" id="drugname" name="drugname" value={paramValue} disabled/>
                 <div className="row my-2">
@@ -24,8 +24,8 @@ function Prescription() {
                         <input className="form-control"type="date" id="enddate" name="enddate" />
                     </div>
                 </div>
-                <div className="row mt-4">
-                    <div className="col">
+                <div className="row mt-4 px-5">
+                    <div className="col-2">
                         <h4 className="text-dark text-center questrial">Taken every</h4>
                     </div>
                     <div className="col">
