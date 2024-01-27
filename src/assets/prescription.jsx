@@ -24,7 +24,7 @@ function Prescription() {
         // create a JS fetch get request, append all data to the url
         var url = 'http://localhost:8080/api/v1/add';
         url += '?username=jdoe';
-        url += '&hash=cc3a0280e4fc1415930899896574e118';
+        url += '&hash=5f4dcc3b5aa765d61d8327deb882cf99';
         url += '&name=' + drugName;
         url += '&manufacturer_name=' + drugManufacturer
         url += '&dosage_start_date=' + data.get('startdate');
@@ -32,7 +32,6 @@ function Prescription() {
         url += '&dosage_frequency=' + data.get('dosagecount');
         url += '&dosage_frequency_unit=' + data.get('dosagefreq')
         url += '&dosage_number=' + data.get('dosage');
-        url += '*time_until_next_dose=' + "0";
         const options = {
             method: 'GET'
         };
