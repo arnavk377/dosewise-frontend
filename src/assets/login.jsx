@@ -2,6 +2,9 @@ import React from 'react';
 import "./navbar.css";
 import Navbar from './navbar.jsx';
 import "./signup.css";
+// import md5 hash
+import md5 from "md5";
+
 
 function LogIn() {
 
@@ -17,30 +20,43 @@ function LogIn() {
         }
 
         // hash password with mb5
-        var hash = require('md5');
-        var password = hash(data.get('password'));
+        var unhashed = data.get('password');
+        console.log(unhashed);
+        var hash = md5(unhashed);
+        console.log(unhashed + " => " + hash);
 
         // create a JS fetch get request, append all data to the url
         var url = 'http://localhost:8080/api/v1/auth';
         url += '?username=' + data.get('username');
-        url += '&password=' + password;
+        url += '&hash=' + hash;
         const options = {
             method: 'GET'
         };
 
         // fetch data and confirm success
-        const response = fetch(url, options);
-        if (response.ok) {
-            const responseData = response.text();
-            if (responseData === 'true') {
-                localStorage.setItem('username', username);
-                localStorage.setItem('hash', password);
-            } else {
-                console.log('Authentication failed');
-            }
-        } else {
-            console.log('Network response unsuccessful.');
-        }
+        fetch(url, options)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response unsuccessful.');
+                }
+                return response.text();  // read response body as text
+            })
+            .then(dg => {
+                if (dg === 'true') {
+                    console.log('Authentication successful');
+                    localStorage.setItem('username', data.get('username'));
+                    localStorage.setItem('hash', hash);
+                    // redirect to home page
+                    window.location.href = '/';
+                } else {
+                    console.log('Authentication failed');
+                    //  give error messsage
+                    alert('Incorrect username or password.')
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
 
         return;
     }
@@ -53,11 +69,11 @@ function LogIn() {
             <h1>Login</h1>
                 <div className='signup-box'>
                     <label htmlFor='username'>Username</label>
-                    <input type='text' id='username' className='signup-box input' />
+                    <input type='text' id='username' name='username' className='signup-box input' />
                 </div>
                 <div className='signup-box'>
                     <label htmlFor='password'>Password</label>
-                    <input type='text' id='password' className='signup-box input' /> 
+                    <input type='text' id='password' name='password' className='signup-box input' /> 
                 </div>
                 <input type='submit' className='submit-button' /> 
             </form>
