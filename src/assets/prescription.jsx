@@ -33,7 +33,6 @@ function Prescription() {
         url += '&dosage_frequency=' + data.get('dosagecount');
         url += '&dosage_frequency_unit=' + data.get('dosagefreq')
         url += '&dosage_number=' + data.get('dosage');
-        url += '*time_until_next_dose=' + "0";
         const options = {
             method: 'GET'
         };
