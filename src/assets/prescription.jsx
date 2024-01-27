@@ -16,6 +16,11 @@ function Prescription() {
         const data = new FormData(event.target);
         console.log(data);
 
+        // log all values in the FormData object
+        for (var pair of data.entries()) {
+            console.log(pair[0]+ ', '+ pair[1]); 
+        }
+
         // create a JS fetch get request, append all data to the url
         var url = 'http://localhost:8080/api/v1/add';
         url += '?name=' + data.get('drugname');
