@@ -71,7 +71,7 @@ function getDrugInfo(drugName) {
       }
       else {
         document.getElementById("drugInfo").innerHTML = drugResult;
-        var dconf = confirm("Drug found: " + drugResult + " by manufacturer:" + drugManufacturer + ". Click OK if this is accurate. If not, please cancel and try searching again.");
+        var dconf = confirm("Drug found: " + drugResult + " by manufacturer: " + drugManufacturer + ". Click OK if this is accurate. If not, please cancel and try searching again.");
         if (dconf == true) {
           window.location.href = '/prescription' + '?name=' + drugResult + '&manufacturer=' + drugManufacturer;
         }
