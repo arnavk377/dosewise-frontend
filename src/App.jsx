@@ -24,7 +24,7 @@ export default function App() {
       <div className="d-flex justify-content-center align-items-center">
       <form className='input-form' onSubmit={handleSubmit}>
         <div className="text-center">
-          <label htmlFor='data' className="fs-4 text-white">Drug Name</label>
+          <label htmlFor='data' className="fs-4 text-dark questrial">Enter a drug name</label>
           <input type='text' 
           className='form-control mt-2'
           id='data' 
@@ -38,7 +38,7 @@ export default function App() {
       </form>
       </div>
       <div className="d-flex justify-content-center align-items-center mt-5">
-      <p id="drugInfo" className="text-white">DRUG INFO</p>
+      <p id="drugInfo" className="text-white invisible" >DRUG INFO</p>
       </div>
     </>
   )
@@ -71,7 +71,7 @@ function getDrugInfo(drugName) {
       }
       else {
         document.getElementById("drugInfo").innerHTML = drugResult;
-        var dconf = confirm("Drug found: " + drugResult + " by manufacturer: " + drugManufacturer + ". Click OK if this is accurate. If not, please cancel and try searching again.");
+        var dconf = confirm("Drug found: " + drugResult + "\nManufacturer: " + drugManufacturer + "\nClick OK if this is accurate. If not, please cancel and try searching again.");
         if (dconf == true) {
           window.location.href = '/prescription' + '?name=' + drugResult + '&manufacturer=' + drugManufacturer;
         }
