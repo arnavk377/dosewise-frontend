@@ -31,6 +31,7 @@ export default function App() {
         </div>
         <input type="submit"/>
       </form>
+      <p id="drugInfo">DRUG INFO</p>
     </>
   )
 }
@@ -47,11 +48,11 @@ function getDrugInfo(drugName) {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      return (
-        <>
-        <h1>MATCHED DRUG: {data}</h1>
-        </>
-      )
+
+      // change html element to display drug info
+      document.getElementById("drugInfo").innerHTML = data;
+
+      return;
     })
     .catch(err => console.log(err));
 }
