@@ -23,20 +23,22 @@ export default function App() {
     <>
       <Navbar />
       <div className="d-flex justify-content-center align-items-center">
-      <h1 className="">Welcome to DoseWise!</h1>
+      <h1 className="text-white main-title">Welcome to Dosewise!</h1>
       </div>
       <div className="d-flex justify-content-center align-items-center">
       <form className='input-form' onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor='data'>Drug Name</label>
+        <div className="text-center">
+          <label htmlFor='data' className="fs-4 text-white">Drug Name</label>
           <input type='text' 
-          className='form-control'
+          className='form-control mt-2'
           id='data' 
           value={data || ""}
           onChange={(e) => setData(e.target.value)}
           />
         </div>
-        <input className="btn btn-dark mt-2" type="submit"/>
+        <div className="d-flex justify-content-center align-items-center">
+          <input className="btn btn-dark mt-3" type="submit"/>
+        </div>
       </form>
       </div>
       <div className="d-flex justify-content-center align-items-center mt-5">
