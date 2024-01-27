@@ -16,7 +16,8 @@ function navbar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav navbar-dark">
           <Nav className="me-auto navbar-light">
-            <Nav.Link href="/signup"className="text-white px-1 popUp questrial">Sign Up</Nav.Link>
+            <Nav.Link href="/signup"className="text-white px-2 popUp questrial">Sign Up</Nav.Link>
+            <Nav.Link href="/login"className="text-white px-2 popUp questrial">Login</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown" className="px-1 questrial">
               <NavDropdown.Item >Action</NavDropdown.Item>
               <NavDropdown.Item >
