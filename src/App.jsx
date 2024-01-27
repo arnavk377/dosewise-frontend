@@ -37,7 +37,7 @@ export default function App() {
           />
         </div>
         <div className="d-flex justify-content-center align-items-center">
-          <input className="btn btn-dark mt-3" type="submit"/>
+          <input className="btn btn-dark mt-3 bstyle" type="submit"/>
         </div>
       </form>
       </div>
