@@ -50,7 +50,7 @@ function getDrugInfo(drugName) {
       console.log(data);
 
       // change html element to display drug info
-      document.getElementById("drugInfo").innerHTML = data;
+      document.getElementById("drugInfo").innerHTML = data.results.active_ingredients.name;
 
       return;
     })
