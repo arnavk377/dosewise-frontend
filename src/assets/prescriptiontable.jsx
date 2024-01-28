@@ -46,8 +46,8 @@ function PrescriptionTable() {
             })
             .then(res => {
                 // console.log(res)
-                setData(res);
                 console.log(res);
+                window.location.reload();
             })
             .catch(err => {
                 console.log(err);

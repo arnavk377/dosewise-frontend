@@ -52,7 +52,7 @@ function LogIn() {
                 } else {
                     console.log('Authentication failed');
                     //  give error messsage
-                    document.getElementById('error').innerHTML = 'Incorrect username or password.';
+                    document.getElementById('error').innerHTML = 'Incorrect username or password!';
 
                 }
             })
@@ -78,7 +78,7 @@ function LogIn() {
                     <label htmlFor='password'>Password</label>
                     <input type='password' id='password' name='password' className='signup-box input' /> 
                 </div>
-                <div className='text-danger'>
+                <div className='text-danger text-center'>
                     <p id='error'></p>
                 </div>
                 <input type='submit' className='submit-button' /> 
