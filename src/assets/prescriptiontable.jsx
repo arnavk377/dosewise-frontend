@@ -107,7 +107,7 @@ function PrescriptionTable() {
                                     <td>{data[1]}</td>
                                     <td>{data[3]}</td>
                                     <td>{data[4]}</td>
-                                    <td>{data[6]} every {data[5]}</td>
+                                    <td>Every {data[6]} {data[5]}(s)</td>
                                     <td>
                                         {data[7] - data[8]}
                                     </td>

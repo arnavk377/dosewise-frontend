@@ -38,6 +38,12 @@ function Alert() {
                             alertDiv.innerHTML = item;
                             document.getElementById("alertsdiv").appendChild(alertDiv);
                         })
+                    cbutton.className = "btn btn-warning b100";
+                    cbutton.innerHTML = "Conflicts found";
+                }
+                else {
+                    cbutton.className = "btn btn-success b100";
+                    cbutton.innerHTML = "No conflicts found";
                 }
             })
             .catch(err => {
