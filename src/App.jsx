@@ -16,6 +16,11 @@ export default function App() {
     return;
   }
 
+  const signupRedirect = (event) => {
+    event.preventDefault();
+    window.location.href = '/signup';
+  }
+
   // check if there is a username and hash stored in local storage.
   // if not, redirect to login page
   if (localStorage.getItem('username') === null || localStorage.getItem('hash') === null) {
@@ -25,6 +30,26 @@ export default function App() {
         <div className="backgroundimage-div"><div className="backgroundimage-overlay">
           <div className="d-flex justify-content-center align-items-center">
             <h1 className="text-white main-title">Welcome to DoseWise!</h1>
+          </div>
+          <div className="d-flex justify-content-center align-items-center mb-5 mt-4" onClick={signupRedirect}>
+            <div className="card bg-white special-card-width py-2 mx-3">
+              <div className="card-body">
+                <p className="card-text text-center questrial"><i class="fa-solid fa-pills fa-sizeup-special bluec"></i></p>
+                <h5 className="card-title text-center questrial">Track Medications</h5>
+              </div>
+            </div>
+            <div className="card bg-white special-card-width py-2 mx-3" onClick={signupRedirect}>
+              <div className="card-body">
+                <p className="card-text text-center questrial"><i class="fa-solid fa-calculator fa-sizeup-special greenc2"></i></p>
+                <h5 className="card-title text-center questrial">Calculate Intake</h5>
+              </div>
+            </div>
+            <div className="card bg-white special-card-width py-2 mx-3" onClick={signupRedirect}>
+              <div className="card-body">
+                <p className="card-text text-center questrial"><i class="fa-solid fa-triangle-exclamation fa-sizeup-special redc"></i></p>
+                <h5 className="card-title text-center questrial">Check Conflicts</h5>
+              </div>
+            </div>
           </div>
           <div className="d-flex justify-content-center align-items-center">
             <h3 className="text-white questrial">Please <a className="noul" href="/login">log in</a> or <a className="noul" href="/signup">sign up</a> to get started!</h3>
