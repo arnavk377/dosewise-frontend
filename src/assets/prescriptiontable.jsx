@@ -30,8 +30,9 @@ function PrescriptionTable() {
     return (
         <>
             <Navbar />
-            <div>
-                <table>
+            <div className="container p-4 bg-white rounded">
+                <h1 className="text-center questrial">Current Medications</h1>
+                <table className="table questrial">
                     <thead>
                         <tr>
                             <th>Name</th>

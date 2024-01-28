@@ -18,7 +18,7 @@ function navbar() {
           <Nav className="me-auto navbar-light">
             <Nav.Link href="/signup"className="text-white px-2 popUp questrial text-center">Sign Up</Nav.Link>
             <Nav.Link href="/login"className="text-white px-2 popUp questrial text-center">Login</Nav.Link>
-            <Nav.Link href="/prescriptiontable"className="text-white px-2 popUp questrial text-center">Current Medicines</Nav.Link>
+            <Nav.Link href="/prescriptiontable"className="text-white px-2 popUp questrial text-center">Current Medications</Nav.Link>
             {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown" className="px-1 questrial text-center">
               <NavDropdown.Item >Action</NavDropdown.Item>
               <NavDropdown.Item >
