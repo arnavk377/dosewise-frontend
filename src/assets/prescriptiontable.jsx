@@ -63,10 +63,10 @@ function PrescriptionTable() {
                                         {data[7]}
                                     </td>
                                     <td>
-                                        <button className="btn btn-primary"><i class="fa-solid fa-pills"></i> Intake</button>
+                                        <button className="btn btn-primary"><i className="fa-solid fa-pills"></i> Intake</button>
                                     </td>
                                     <td>
-                                        <button className="btn btn-danger" onClick={() => deleteMedicine(data[0])}><i class="fa-solid fa-trash"></i></button>
+                                        <button className="btn btn-danger" onClick={() => deleteMedicine(data[0])}><i className="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
                             ))}
