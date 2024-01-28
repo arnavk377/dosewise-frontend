@@ -30,6 +30,7 @@ function PrescriptionTable() {
     }, []);
 
     const deleteMedicine = (id) => {
+        if (!window.confirm("Are you sure you want to delete this medication?")) return;
         console.log("Deleting: " + id);
         var url = 'http://localhost:8080/api/v1/delete?username=' + localStorage.getItem('username'); //http://localhost:8080/api/v1/delete?username=jdoe&hash=5f4dcc3b5aa765d61d8327deb882cf99&id=1
         url += '&hash=' + localStorage.getItem('hash');
@@ -85,7 +86,6 @@ function PrescriptionTable() {
     return (
         <>
             <Navbar />
-            <Alert />
             <div className="container p-4 bg-white rounded">
                 <h1 className="text-center questrial">Current Medications</h1>
                 <table className="table questrial">
@@ -122,6 +122,9 @@ function PrescriptionTable() {
                     </tbody>
                 </table>
             </div>
+
+            
+            <Alert />
         </>
     );
 }

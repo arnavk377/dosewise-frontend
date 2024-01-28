@@ -39,18 +39,20 @@ export default function App() {
       <h1 className="text-white main-title">Welcome to DoseWise!</h1>
       </div>
       <div className="d-flex justify-content-center align-items-center">
-      <form className='input-form' onSubmit={handleSubmit}>
+      <form className='input-form w-50' onSubmit={handleSubmit}>
         <div className="text-center">
           <label htmlFor='data' className="fs-4 text-dark questrial">Enter a drug name</label>
+          <div className="input-group mb-3">
           <input type='text' 
-          className='form-control mt-2'
+          className='form-control'
           id='data' 
           value={data || ""}
           onChange={(e) => setData(e.target.value)}
           />
-        </div>
-        <div className="d-flex justify-content-center align-items-center">
-          <input className="btn btn-dark mt-3 bstyle" type="submit"/>
+          <div className="input-group-append">
+            <input className="btn btn-dark bstyle" type="submit"/>
+          </div>
+          </div>
         </div>
       </form>
       </div>
@@ -100,7 +102,7 @@ function getDrugInfo(drugName) {
       return;
     })
     .catch(err => {
-      alert(err.message);
+      alert("Drug not found. Try using a different name or checking the spelling.");
     });
 }
 
