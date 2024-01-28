@@ -19,12 +19,12 @@ function Alert() {
             .then(res => {
                 setAlerts(res);
                 console.log(res);
-                if (Array.isArray(res) && res.length) {
+                /* if (Array.isArray(res) && res.length) {
                     res.forEach(item =>
                         {
 
                         })
-                }
+                } */
             })
             .catch(err => {
                 console.log(err);
