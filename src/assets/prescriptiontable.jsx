@@ -18,8 +18,10 @@ function PrescriptionTable() {
                 return response.json();
             })
             .then(res => {
+                res = Array.from(res)
                 // console.log(res)
-                setData(res);
+                setData(Object.values(res));
+                console.log(typeof res);
                 console.log(res);
             })
             .catch(err => {
@@ -29,6 +31,53 @@ function PrescriptionTable() {
 
     const deleteMedicine = (id) => {
         console.log("Deleting: " + id);
+        var url = 'http://localhost:8080/api/v1/delete?username=' + localStorage.getItem('username'); //http://localhost:8080/api/v1/delete?username=jdoe&hash=5f4dcc3b5aa765d61d8327deb882cf99&id=1
+        url += '&hash=' + localStorage.getItem('hash');
+        url += '&id=' + id;
+        const options = {
+            method: 'GET'
+        }
+        fetch(url, options)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(res => {
+                // console.log(res)
+                setData(res);
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        return;
+    }
+
+    const takeMedicine = (id) => {
+        console.log("Taking Dose: " + id);
+        var url = 'http://localhost:8080/api/v1/take?username=' + localStorage.getItem('username'); //http://localhost:8080/api/v1/delete?username=jdoe&hash=5f4dcc3b5aa765d61d8327deb882cf99&id=1
+        url += '&hash=' + localStorage.getItem('hash');
+        url += '&id=' + id;
+        const options = {
+            method: 'GET'
+        }
+        fetch(url, options)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(res => {
+                // console.log(res)
+                setData(res);
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            });
         return;
     }
 
@@ -60,10 +109,10 @@ function PrescriptionTable() {
                                     <td>{data[4]}</td>
                                     <td>{data[6]} every {data[5]}</td>
                                     <td>
-                                        {data[7]}
+                                        {data[7] - data[8]}
                                     </td>
                                     <td>
-                                        <button className="btn btn-primary"><i className="fa-solid fa-pills"></i> Intake</button>
+                                        <button className="btn btn-primary" onClick={() => takeMedicine(data[0])}><i className="fa-solid fa-pills"></i> Intake</button>
                                     </td>
                                     <td>
                                         <button className="btn btn-danger" onClick={() => deleteMedicine(data[0])}><i className="fa-solid fa-trash"></i></button>

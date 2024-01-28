@@ -22,6 +22,7 @@ function Alert() {
                 /* if (Array.isArray(res) && res.length) {
                     res.forEach(item =>
                         {
+                            const newAlert = document.createAttribute("alert_new");
 
                         })
                 } */
@@ -31,7 +32,9 @@ function Alert() {
             });
     }, []);
     return (
-        <div>hi</div>
+        <>
+            <div id="alertsdiv"></div>
+        </>
     )
 }
 
