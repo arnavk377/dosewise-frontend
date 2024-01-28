@@ -26,6 +26,11 @@ function PrescriptionTable() {
             });
     }, []);
 
+    const deleteMedicine = (id) => {
+        console.log("Deleting: " + id);
+        return;
+    }
+
 
     return (
         <>
@@ -39,8 +44,9 @@ function PrescriptionTable() {
                             <th>Start Date</th>
                             <th>End Date</th>
                             <th>Frequency</th>
-                            <th>Dosage Frequency</th>
                             <th>Doses Remaining</th>
+                            <th>Take Dose</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,9 +57,14 @@ function PrescriptionTable() {
                                     <td>{data[3]}</td>
                                     <td>{data[4]}</td>
                                     <td>{data[6]} every {data[5]}</td>
-                                    <td>{data[7]}</td>
                                     <td>
                                         {data[7]}
+                                    </td>
+                                    <td>
+                                        <button className="btn btn-primary"><i class="fa-solid fa-pills"></i> Intake</button>
+                                    </td>
+                                    <td>
+                                        <button className="btn btn-danger" onClick={() => deleteMedicine(data[0])}><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
                             ))}
@@ -63,5 +74,6 @@ function PrescriptionTable() {
         </>
     );
 }
+
 
 export default PrescriptionTable;

@@ -28,11 +28,10 @@ function Prescription() {
         url += '&hash=' + localStorage.getItem('hash');
         url += '&name=' + drugName;
         url += '&manufacturer_name=' + drugManufacturer
-        url += '&dosage_start_date=' + data.get('startdate');
-        url += '&dosage_end_date=' + data.get('enddate');
+        url += '&dosage_start_date=' + convertDateFormat(data.get('startdate'));
+        url += '&dosage_end_date=' + convertDateFormat(data.get('enddate'));
         url += '&dosage_frequency=' + data.get('dosagecount');
-        url += '&dosage_frequency_unit=' + data.get('dosagefreq')
-        url += '&dosage_number=' + data.get('dosage');
+        url += '&dosage_frequency_unit=' + data.get('dosagefreq');
         const options = {
             method: 'GET'
         };
@@ -89,9 +88,9 @@ function Prescription() {
                     <div className="col">
                     <label htmlFor="dosagefreq">Frequency</label>
                     <select className="form-select" id="dosagefreq" name="dosagefreq">
-                        <option value="hourly">Hours</option>
-                        <option value="daily">Days</option>
-                        <option value="weekly">Weeks</option>
+                        <option value="hour">Hours</option>
+                        <option value="day">Days</option>
+                        <option value="week">Weeks</option>
                     </select>
                     </div>
                 </div>
@@ -113,6 +112,19 @@ function Prescription() {
             </form>
         </>
     )
+}
+
+function convertDateFormat(dateString) {
+    // Split the date string into [year, month, day]
+    const parts = dateString.split('-');
+
+    // Check if the dateString is in the correct format
+    if(parts.length !== 3) {
+        throw new Error('Invalid date format. Expected YYYY-MM-DD');
+    }
+
+    // Reformat to YYYY-DD-MM
+    return parts[0] + '-' + parts[2] + '-' + parts[1];
 }
 
 export default Prescription
