@@ -41,7 +41,7 @@ export default function App() {
       <div className="d-flex justify-content-center align-items-center">
       <form className='input-form w-50' onSubmit={handleSubmit}>
         <div className="text-center">
-          <label htmlFor='data' className="fs-4 text-dark questrial">Enter a drug name</label>
+          <label htmlFor='data' className="fs-4 text-dark questrial">Enter a medication name</label>
           <div className="input-group mb-3">
           <input type='text' 
           className='form-control'
@@ -53,6 +53,12 @@ export default function App() {
             <input className="btn btn-dark bstyle" type="submit"/>
           </div>
           </div>
+        </div>
+
+        <label className="fs-3 text-dark questrial text-center">OR</label>
+
+        <div className="text-center">
+          <button className="btn btn-dark bstyle b100" type="button" onClick={() => window.location.href = '/prescriptiontable'}>View your prescriptions</button>
         </div>
       </form>
       </div>
