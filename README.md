@@ -1,4 +1,24 @@
-# Runtime Commands
+# Full Project Runtime Commands
+Commands to run entire Dosewise Project
+
+Frontend
+```
+git clone https://github.com/arnavk377/dosewise-frontend.git
+cd dosewise-frontend (or repository name)
+npm install
+npm run dev (for local host server)
+```
+
+Backend
+```
+git clone https://github.com/Akshay-Rohatgi/dosewise-backend.git
+cd dosewise-backend
+pip install -r requirements.txt
+cd src
+python3 app.py 
+```
+
+# Repository Runtime Commands
 
 ```
 cd dosewise-frontend (or repository name)
