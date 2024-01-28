@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Navbar from './assets/navbar.jsx'
+import example1 from './assets/dw_example_1.png'
 
 export default function App() {
   const [data, setData] = useState(null)
@@ -21,13 +22,15 @@ export default function App() {
     return (
       <>
         <Navbar />
+        <div className="backgroundimage-div"><div className="backgroundimage-overlay">
           <div className="d-flex justify-content-center align-items-center">
             <h1 className="text-white main-title">Welcome to DoseWise!</h1>
           </div>
           <div className="d-flex justify-content-center align-items-center">
             <h3 className="text-white questrial">Please <a className="noul" href="/login">log in</a> or <a className="noul" href="/signup">sign up</a> to get started!</h3>
           </div>
-
+          </div>
+        </div>
       </>
     )
   }
@@ -35,6 +38,7 @@ export default function App() {
   return (
     <>
       <Navbar />
+      <div className="backgroundimage-div"><div className="backgroundimage-overlay">
       <div className="d-flex justify-content-center align-items-center">
       <h1 className="text-white main-title">Welcome to DoseWise!</h1>
       </div>
@@ -65,6 +69,7 @@ export default function App() {
       <div className="d-flex justify-content-center align-items-center mt-5">
       <p id="drugInfo" className="text-white invisible" >DRUG INFO</p>
       </div>
+      </div></div>
     </>
   )
 }

@@ -11,6 +11,10 @@ body {
     background-image: linear-gradient(to bottom, #13031a, #320b38);
 }
 
+html {
+    background-color:#13031a;
+}
+
 .questrial {
     font-family: 'Questrial', sans-serif;
 }
@@ -18,8 +22,8 @@ body {
 .main-title {
     font-family: 'Questrial', sans-serif;
     font-size: 64px;
-    margin-top: 100px;
-    margin-bottom: 60px;
+    margin-top: 160px;
+    margin-bottom: 100px;
     margin-left: 8px;
     margin-right: 8px;
 }
@@ -58,4 +62,20 @@ body {
 .noul:hover {
     transition: ease-in-out 0.1s;
     color: #bcffdc;
+}
+
+.backgroundimage-div {
+    background-image: url("assets/pharmaceuticalbg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 95vh;
+    width: 100%;
+    z-index: -1;
+}
+.backgroundimage-overlay {
+    background-color: rgba(38, 5, 37, 0.877);
+    height: 95vh;
+    width: 100%;
+    z-index: -1;
 }

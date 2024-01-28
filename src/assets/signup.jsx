@@ -67,6 +67,10 @@ function SignUp() {
             <form onSubmit={handleSubmit}>
             <h1>Sign Up</h1>
                 <div className='signup-box'>
+                    <label htmlFor='fullname'>Full Name</label>
+                    <input type='text' id='fullname' name='fullname' className='signup-box input' /> 
+                </div>
+                <div className='signup-box'>
                     <label htmlFor='username'>Username</label>
                     <input type='text' id='username' name='username' className='signup-box input' />
                 </div>
@@ -77,10 +81,6 @@ function SignUp() {
                 <div className='signup-box'>
                     <label htmlFor='password'>Confirm Password</label>
                     <input type='password' id='cpassword' name='cpassword' className='signup-box input' />
-                </div>
-                <div className='signup-box'>
-                    <label htmlFor='fullname'>Full Name</label>
-                    <input type='text' id='fullname' name='fullname' className='signup-box input' /> 
                 </div>
                 <input type='submit' className='submit-button' /> 
             </form>
