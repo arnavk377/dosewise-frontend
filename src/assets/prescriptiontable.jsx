@@ -5,7 +5,7 @@ function PrescriptionTable() {
     const [data, setData] = useState(null);
     useEffect(() => {
         var url = 'http://localhost:8080/api/v1/get_medicines_for_user?username=' + localStorage.getItem('username');
-        // url += '&hash=' + localStorage.getItem('hash');
+        url += '&hash=' + localStorage.getItem('hash');
         const options = {
             method: 'GET'
         }
