@@ -17,9 +17,14 @@ function Alert() {
                 return response.json();
             })
             .then(res => {
-                // console.log(res)
                 setAlerts(res);
                 console.log(res);
+                /* if (Array.isArray(res) && res.length) {
+                    res.forEach(item =>
+                        {
+
+                        })
+                } */
             })
             .catch(err => {
                 console.log(err);
