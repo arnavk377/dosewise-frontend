@@ -44,3 +44,18 @@ body {
     cursor: not-allowed
 }
 
+.noul {
+    text-decoration: none;
+    color: #2fff90;
+    cursor: pointer;
+    transition: ease-in-out 0.1s;
+}
+
+.greenc {
+    color: #2fff90 !important;
+}
+
+.noul:hover {
+    transition: ease-in-out 0.1s;
+    color: #bcffdc;
+}

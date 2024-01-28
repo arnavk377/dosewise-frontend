@@ -20,6 +20,12 @@ function SignUp() {
         // create a JS fetch get request, append all data to the url
         var url = 'http://localhost:8080/api/v1/adduser';
         url += '?username=' + data.get('username');
+        // check password match
+        if (data.get('password') !== data.get('cpassword')) {
+            alert('Passwords do not match.');
+            return;
+        }
+
         var hashed = md5(data.get('password'));
         url += '&hash=' + hashed;
         url += '&full_name=' + data.get('fullname');
@@ -66,7 +72,11 @@ function SignUp() {
                 </div>
                 <div className='signup-box'>
                     <label htmlFor='password'>Password</label>
-                    <input type='text' id='password' name='password' className='signup-box input' /> 
+                    <input type='password' id='password' name='password' className='signup-box input' /> 
+                </div>
+                <div className='signup-box'>
+                    <label htmlFor='password'>Confirm Password</label>
+                    <input type='password' id='cpassword' name='cpassword' className='signup-box input' />
                 </div>
                 <div className='signup-box'>
                     <label htmlFor='fullname'>Full Name</label>

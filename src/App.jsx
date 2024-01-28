@@ -18,14 +18,25 @@ export default function App() {
   // check if there is a username and hash stored in local storage.
   // if not, redirect to login page
   if (localStorage.getItem('username') === null || localStorage.getItem('hash') === null) {
-    window.location.href = '/login';
+    return (
+      <>
+        <Navbar />
+          <div className="d-flex justify-content-center align-items-center">
+            <h1 className="text-white main-title">Welcome to DoseWise!</h1>
+          </div>
+          <div className="d-flex justify-content-center align-items-center">
+            <h3 className="text-white questrial">Please <a className="noul" href="/login">log in</a> or <a className="noul" href="/signup">sign up</a> to get started!</h3>
+          </div>
+
+      </>
+    )
   }
 
   return (
     <>
       <Navbar />
       <div className="d-flex justify-content-center align-items-center">
-      <h1 className="text-white main-title">Welcome to Dosewise!</h1>
+      <h1 className="text-white main-title">Welcome to DoseWise!</h1>
       </div>
       <div className="d-flex justify-content-center align-items-center">
       <form className='input-form' onSubmit={handleSubmit}>

@@ -37,6 +37,7 @@ function LogIn() {
         fetch(url, options)
             .then(response => {
                 if (!response.ok) {
+                    document.getElementById('error').innerHTML = 'User does not exist!';
                     throw new Error('Network response unsuccessful.');
                 }
                 return response.text();  // read response body as text
@@ -51,10 +52,12 @@ function LogIn() {
                 } else {
                     console.log('Authentication failed');
                     //  give error messsage
-                    alert('Incorrect username or password.')
+                    document.getElementById('error').innerHTML = 'Incorrect username or password.';
+
                 }
             })
             .catch(error => {
+                document.getElementById('error').innerHTML = 'User does not exist!';
                 console.log(error);
             });
 
@@ -73,7 +76,10 @@ function LogIn() {
                 </div>
                 <div className='signup-box'>
                     <label htmlFor='password'>Password</label>
-                    <input type='text' id='password' name='password' className='signup-box input' /> 
+                    <input type='password' id='password' name='password' className='signup-box input' /> 
+                </div>
+                <div className='text-danger'>
+                    <p id='error'></p>
                 </div>
                 <input type='submit' className='submit-button' /> 
             </form>

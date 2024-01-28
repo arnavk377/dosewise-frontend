@@ -12,7 +12,14 @@ function navbar() {
   // check if logged in and change the section in the navbar accordingly
   // change only the small snippet and then inject it into the navbar
   var navbarSnippet = (<></>);
-  var userStatement = (<></>);
+  var userStatement = (<>DoseWise</>);
+
+  const logOut = () => {
+    localStorage.removeItem('username');
+    localStorage.removeItem('hash');
+
+    window.location.href = '/';
+  }
 
   if(localStorage.getItem('username') === null || localStorage.getItem('hash') === null) {
     navbarSnippet = (
@@ -24,9 +31,13 @@ function navbar() {
   } else {
     navbarSnippet = (
       <>
-        <Nav.Link href="/logout"className="text-white px-2 popUp questrial text-center">Logout</Nav.Link>
+        <Nav.Link onClick={logOut} className="text-white px-2 popUp questrial text-center">Logout</Nav.Link>
       </>
     );
+    userStatement = (<>
+      <div className="greenc">{localStorage.getItem('username')}'s DoseWise</div>
+      </>
+    )
 
   }
 
