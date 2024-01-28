@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './navbar.jsx';
+import Alert from './alert.jsx';
 
 function PrescriptionTable() {
     const [data, setData] = useState(null);
@@ -30,6 +31,7 @@ function PrescriptionTable() {
     return (
         <>
             <Navbar />
+            <Alert />
             <div className="container p-4 bg-white rounded">
                 <h1 className="text-center questrial">Current Medications</h1>
                 <table className="table questrial">
